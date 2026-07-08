@@ -12,6 +12,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0231-power-of-two](https://github.com/Gourav-Kumar0010/DSA/tree/master/0231-power-of-two) |
 | [0476-number-complement](https://github.com/Gourav-Kumar0010/DSA/tree/master/0476-number-complement) |
+| [1009-complement-of-base-10-integer](https://github.com/Gourav-Kumar0010/DSA/tree/master/1009-complement-of-base-10-integer) |
 ## Recursion
 |  |
 | ------- |
