@@ -12,25 +12,17 @@ class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
         
-        ListNode *temp;
-        temp=head;
+        // Another Method
+        // Using the slow and fast pointer
 
-        //counting the nodes
-        int count=0;
-        while(temp)
+        ListNode *slow,*fast;
+        slow=fast=head;
+
+        while( fast !=NULL && fast->next !=NULL )   //condition evaluation is from left to right is done in C++
         {
-            count++;
-            temp=temp->next;
+            slow=slow->next;
+            fast=fast->next->next ;      //double speed 
         }
-        //iterate till count/2
-        count=count/2;
-        temp=head;  // temp points to head
-        while(count)
-        {
-            temp=temp->next;
-            count--;
-        }
-        //Now temp pointing to the actual mid node
-        return temp;
+        return slow;    // now slow points to the middle node of linked list
     }
 };
