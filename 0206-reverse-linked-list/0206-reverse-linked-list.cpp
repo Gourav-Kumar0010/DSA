@@ -11,27 +11,24 @@
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        if(head==NULL)
-        return head;
 
-        ListNode *curr;
-        curr = head ;
-        vector<int> arr ;
+        // Reversing the node not only the element
 
-        while(curr!=NULL)
+        ListNode *curr,*prev,*fut;
+        curr=head;
+        fut=prev=NULL;
+
+        while(curr)
         {
-            arr.push_back(curr->val);
-            curr=curr->next;
+            fut=curr->next;  //to save the add of next node
+            curr->next = prev ; //now curr is pointing to prev node and initially NULL
+            prev=curr;      //Repeat
+            curr=fut;
         }
-        //vector me sara value aa gya 
-        curr = head;
-        int i = arr.size()-1; //last ko point kar rha h 
-        while(i>=0)
-        {
-            curr->val=arr[i];
-            curr=curr->next;
-            i--;
-        }
+        //Now while curr pooints to the NULL prev points to the last Node
+        head=prev;
+
         return head;
+        
     }
 };
